@@ -14,16 +14,27 @@ namespace MumblingKata.Tests
             //Assert
             Assert.Equal("A", result);
         }
-
         [Fact]
-        public void Mumbling_Letters_ShouldReturnFirstCharOfAEachMumbleUpper()
+        public void Mumble_Letters_ShouldHandleEmptyString()
         {
             //Act
-            var result = _mumbling.Mumble_Letters("ab");
+            var result = _mumbling.Mumble_Letters("");
 
             //Assert
-            Assert.Equal("A-B", result);
+            Assert.Equal("Error, please enter a string", result);
         }
-     
+
+        [Theory]
+        [InlineData("ab", "A-Bb")]
+        [InlineData("abcde", "A-Bb-Ccc-Dddd-Eeeee")]
+        public void Mumbling_Letters_ShouldReturn_XNumberOfYPositionLetter(string inputData, string expectedData)
+        {
+            //Act
+            var result = _mumbling.Mumble_Letters(inputData);
+
+            //Assert
+            Assert.Equal(expectedData, result);
+        }
+
     }
 }
