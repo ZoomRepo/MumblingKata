@@ -10,14 +10,15 @@ namespace MumblingKata.Tests
     {
         public string Mumble_Letters(string inputString)
         {
+            var letters = inputString.ToCharArray();
             var result = "";
 
-            if (inputString == "a")
+            foreach (var letter in letters)
             {
-                return "A";
+                result += letter.ToString().ToUpper() + "-";
             }
 
-            return "A_Bb";
+            return result.TrimEnd('-');
         }
     }
 }

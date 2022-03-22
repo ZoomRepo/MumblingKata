@@ -10,19 +10,20 @@ namespace MumblingKata.Tests
         {
             //Act
             var result = _mumbling.Mumble_Letters("a");
-           
+
             //Assert
             Assert.Equal("A", result);
         }
 
         [Fact]
-        public void Mumble_Letters_Givenab_ShouldReturnA_Bb()
+        public void Mumbling_Letters_ShouldReturnFirstCharOfAEachMumbleUpper()
         {
             //Act
             var result = _mumbling.Mumble_Letters("ab");
 
             //Assert
-            Assert.Equal("A_Bb", result);
+            Assert.Equal("A-B", result);
         }
+     
     }
 }
