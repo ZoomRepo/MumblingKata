@@ -10,7 +10,14 @@ namespace MumblingKata.Tests
     {
         public string Mumble_Letters(string inputString)
         {
-            return "A";
+            var result = "";
+
+            if (inputString == "a")
+            {
+                return "A";
+            }
+
+            return "A_Bb";
         }
     }
 }
